@@ -3,8 +3,10 @@ package Main;
 import java.util.ArrayList;
 import java.util.List;
 
+import Algorithms.CSan;
 import Algorithms.DiskSchedulingAlgorithm;
 import Algorithms.FCFS;
+import Algorithms.Look;
 import Algorithms.SSTF;
 import Algorithms.Scan;
 
@@ -14,10 +16,14 @@ public class Main {
 		ArrayList<Integer> l = new ArrayList<Integer>();
 		l.add(8);
 		l.add(3);
+		l.add(4);
+		l.add(10);
+		l.add(20);
+		l.add(1);
 		return l;
 	}
 	public static Integer getDirection(){
-		return -1;
+		return 1;
 	}
 	public static Integer getInitialPosition(){
 		return 5;
@@ -27,7 +33,7 @@ public class Main {
 		ArrayList<Integer> seq = (ArrayList<Integer>)getInput();
 		Integer direction = getDirection();
 		Integer initialPosition = getInitialPosition();
-		DiskSchedulingAlgorithm algo = new Scan(seq, initialPosition, direction,3000);
+		DiskSchedulingAlgorithm algo = new Look(seq, initialPosition, direction,3000);
 		ArrayList<Integer> answer = (ArrayList<Integer>)algo.execute();
 		for(Integer i: answer){
 			System.out.print(i + " ");
