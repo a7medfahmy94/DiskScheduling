@@ -61,6 +61,7 @@ public class Scan extends DiskSchedulingAlgorithm {
 	}
 	public List<Integer> scan(Integer start , Integer step){
 		ArrayList<Integer> newRes= new ArrayList<Integer>();
+		ArrayList<Integer> newSeq = (ArrayList<Integer>) this.sequence;
 		int pre = start;
 		while(start >= 0 && start <= this.endPoint){
 			start+=step;

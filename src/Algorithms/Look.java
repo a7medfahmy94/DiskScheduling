@@ -1,9 +1,7 @@
 package Algorithms;
+
 import java.util.ArrayList;
 import java.util.List;
-
-
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Collections;
 
 public class Look extends DiskSchedulingAlgorithm {
 	public Look(List<Integer> l,Integer i,
@@ -43,7 +41,6 @@ public class Look extends DiskSchedulingAlgorithm {
 		int pre = start;
 		while(start >= 0 && start <= this.endPoint){
 			start+=step;
-			Collections.sort(this.sequence);
 			for(int i = 0 ; i < this.sequence.size() ; i++){
 				if(start.equals(this.sequence.get(i))){
 					newRes.add(this.sequence.get(i));
